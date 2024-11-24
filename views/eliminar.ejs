@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Gasto</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div style="text-align: right; margin-right: 20px;">
+        <a href="/" class="button">Regresar</a>
+    </div>
+    <h1>Eliminar Gasto</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Concepto</th>
+                <th>Monto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% gastos.forEach(gasto => { %>
+                <tr>
+                    <td><%= gasto.id %></td>
+                    <td><%= gasto.concepto %></td>
+                    <td><%= gasto.monto %></td>
+                    <td>
+                        <form action="/eliminar/<%= gasto.id %>" method="POST">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

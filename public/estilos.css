@@ -1,0 +1,138 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Texto claro */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #A7C957; /* Verde dólar */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #A7C957; /* Verde dólar */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F4D03F; /* Dorado suave */
+}
+
+/* Tablas */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1E1E1E; /* Fondo de tabla oscuro */
+    color: #E0E0E0; /* Texto claro */
+    border: 1px solid #333333; /* Borde sutil */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #333333; /* Borde sutil */
+}
+
+th {
+    background-color: #333333; /* Cabecera de tabla más oscuro */
+    color: #A7C957; /* Verde dólar */
+}
+
+tr:nth-child(even) {
+    background-color: #2A2A2A; /* Alternar color de filas */
+}
+
+tr:hover {
+    background-color: #3C3C3C; /* Efecto hover */
+}
+
+/* Formularios */
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1E1E1E; /* Fondo oscuro */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #A7C957; /* Verde dólar */
+}
+
+input, select, button {
+    width: 97%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #2A2A2A; /* Fondo de inputs */
+    color: #E0E0E0; /* Texto claro */
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #A7C957; /* Enfoque verde dólar */
+}
+
+button {
+    background-color: #A7C957; /* Verde dólar */
+    color: #121212; /* Texto oscuro */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #F4D03F; /* Dorado suave */
+}
+
+/* Botones generales */
+button, a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #A7C957; /* Verde dólar */
+    color: #121212; /* Texto oscuro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+button:hover, a.button:hover {
+    background-color: #F4D03F; /* Dorado suave */
+}
+
+/* Centrar botones */
+button, .center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tabla eliminar */
+table.eliminar th, table.eliminar td {
+    text-align: center;
+}
+
+/* Contenedor de los botones de acción */
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Alinea los botones en el centro */
+    gap: 20px; /* Espaciado entre botones */
+    margin: 20px ;
+}
+
+.action-buttons .button {
+    flex: none; /* Evita que los botones se estiren */
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Gasto</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div style="text-align: right; margin-right: 20px;">
+        <a href="/" class="button">Regresar</a>
+    </div>
+    <h1>Actualizar Gasto</h1>
+    <form action="/actualizar/<%= gasto.id %>" method="POST">
+        <label for="concepto">Concepto:</label>
+        <input type="text" id="concepto" name="concepto" value="<%= gasto.concepto %>" required><br>
+
+        <label for="clasificacion_id">Clasificación:</label>
+        <select id="clasificacion_id" name="clasificacion_id" required>
+            <% clasificaciones.forEach(clasificacion => { %>
+                <option value="<%= clasificacion.id %>" 
+                    <%= gasto.clasificacion_id === clasificacion.id ? 'selected' : '' %>>
+                    <%= clasificacion.clasificacion %>
+                </option>
+            <% }) %>
+        </select><br>
+
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" value="<%= gasto.monto %>" step="0.01" required><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="<%= gasto.fecha %>" required><br>
+
+        <label for="forma_pago">Forma de Pago:</label>
+        <input type="text" id="forma_pago" name="forma_pago" value="<%= gasto.forma_pago %>" required><br>
+
+        <label for="entidad">Entidad:</label>
+        <input type="text" id="entidad" name="entidad" value="<%= gasto.entidad %>" required><br>
+
+        <label for="es_deducible">¿Es Deducible?</label>
+        <input type="checkbox" id="es_deducible" name="es_deducible" <%= gasto.es_deducible ? 'checked' : '' %>><br>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Gasto</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div style="text-align: right; margin-right: 20px;">
+        <a href="/" class="button">Regresar</a>
+    </div>
+    <h1>Registrar Gasto</h1>
+    <form action="/registrar" method="POST">
+        <label for="concepto">Concepto:</label>
+        <input type="text" id="concepto" name="concepto" required><br>
+
+        <label for="clasificacion_id">Clasificación:</label>
+        <select id="clasificacion_id" name="clasificacion_id" required>
+            <% clasificaciones.forEach(clasificacion => { %>
+                <option value="<%= clasificacion.id %>"><%= clasificacion.clasificacion %></option>
+            <% }) %>
+        </select><br>
+
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" step="0.01" required><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required><br>
+
+        <label for="forma_pago">Forma de Pago:</label>
+        <input type="text" id="forma_pago" name="forma_pago" required><br>
+
+        <label for="entidad">Entidad:</label>
+        <input type="text" id="entidad" name="entidad" required><br>
+
+        <label for="es_deducible">¿Es Deducible?</label>
+        <input type="checkbox" id="es_deducible" name="es_deducible"><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index - Sistema de Finanzas</title>
+    <link rel="stylesheet" href="/estilos.css">
+
+</head>
+<body>
+    <h1>Gastos Registrados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Concepto</th>
+                <th>Clasificación</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                <th>Forma de Pago</th>
+                <th>Entidad</th>
+                <th>¿Es Deducible?</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% gastos.forEach(gasto => { %>
+                <tr>
+                    <td><%= gasto.id %></td>
+                    <td><%= gasto.concepto %></td>
+                    <td><%= gasto.clasificacion %></td>
+                    <td><%= gasto.monto %></td>
+                    <td><%= gasto.fecha %></td>
+                    <td><%= gasto.forma_pago %></td>
+                    <td><%= gasto.entidad %></td>
+                    <td><%= gasto.es_deducible ? 'Sí' : 'No' %></td>
+                    <td>
+                        <a href="/actualizar/<%= gasto.id %>">Actualizar</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br>
+    <div class="action-buttons">
+        <a href="/formulario" class="button">Agregar Gasto</a>
+        <a href="/eliminar" class="button">Eliminar Gasto</a>
+    </div>
+</body>
+</html>
